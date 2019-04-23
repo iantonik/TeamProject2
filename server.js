@@ -18,6 +18,9 @@ app.set('views', "public/views/")
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var handlebars = require('handlebars');
+handlebars.registerHelper('moment', require('helper-moment'));
+
 // Routes
 require("./routes/api-routes.js")(app);
 
