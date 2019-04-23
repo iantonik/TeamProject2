@@ -7,7 +7,10 @@
     <ul>
         {{#each schedule}}
         <li>
-            {{this.schedule_date}}
+            {{this.Package.Client.first_name}}: 
+            {{this.Package.Client.last_name}}: 
+            {{moment this.schedule_date lang="en" format="dddd, DD MMMM YYYY HH:mm A"}}
+
         </li>
         
         {{/each}}
