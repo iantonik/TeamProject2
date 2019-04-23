@@ -1,13 +1,15 @@
 <div class="container">
-    <h1>Welcome World!</h1>
-    <h2>Project 2 Group 8</h2>
+    <h1>Single Trainer</h1>
 
-    <h2>Team Members:</h2>
+
+
+    <h2>Upcoming Sessions:</h2>
     <ul>
-        {{#each member}}
+        {{#each schedule}}
         <li>
-            {{this.TeamMember}}
+            {{this.schedule_date}}
         </li>
+        
         {{/each}}
     </ul>
 
