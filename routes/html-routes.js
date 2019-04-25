@@ -6,7 +6,7 @@ module.exports = function (app) {
     });
 
     app.get("/clients/all", function(req, res) {
-        console.log("a view of all clients");
+        res.render("all-clients");
     });
 
 };

@@ -6,7 +6,7 @@ const Op = Sequelize.Op;
 module.exports = function (app) {
 
     app.get("/api/clients/all", function(req, res) {
-        console.log("all clients");
+        res.json();
     });
 
     app.get("/api/clients/:id", function(req, res) {
