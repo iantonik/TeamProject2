@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Client = sequelize.define("Client", {
         first_name: {
             type: DataTypes.STRING
@@ -18,9 +18,6 @@ module.exports = function(sequelize, DataTypes) {
         gender: {
             type: DataTypes.STRING
         },
-        is_active: {
-            type: DataTypes.BOOLEAN
-        },
         age: {
             type: DataTypes.INTEGER
         },
@@ -29,11 +26,16 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Client.associate = function(models) {
-        Client.hasMany(models.Package, {
-            onDelete: "cascade"
-        });
-    };
+    Client.associate = function (models) {
+        Client.belongsTo(models.Package),{
+            foreignKey:{
+                allowNull: true
+            }
+        }
+        
+        Client.hasMany(models.Session)
+    }
 
     return Client;
 }
+

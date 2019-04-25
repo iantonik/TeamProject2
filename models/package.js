@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Package = sequelize.define("Package", {
         session_count: {
             type: DataTypes.INTEGER
@@ -10,20 +10,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING
         }
     });
-    
 
-
-    Package.associate = function(models) {
-        Package.belongsTo(models.Client, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-
-        Package.hasMany(models.Session, {
-            onDelete: "cascade"
-        });
+    Package.associate = function (models) {
+        Package.hasOne(models.Client);
+        Package.hasOne(models.Session);
     };
+
 
     return Package;
 };
