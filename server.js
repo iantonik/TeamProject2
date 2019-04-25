@@ -22,7 +22,10 @@ var handlebars = require('handlebars');
 handlebars.registerHelper('moment', require('helper-moment'));
 
 // Routes
-require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/client-api-routes.js")(app);
+require("./routes/session-api-routes.js")(app);
+
 
 
 db.sequelize.sync().then(function() {
