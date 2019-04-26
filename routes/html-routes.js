@@ -28,4 +28,13 @@ module.exports = function (app) {
         console.log("a view of all clients");
     });
 
+    app.get("/packages/all", function(req, res){
+        db.Package.findAll({
+
+        }).then(function(response){
+            // res.json(response);
+            res.render("package", {package: response})
+        })
+    })
+
 };

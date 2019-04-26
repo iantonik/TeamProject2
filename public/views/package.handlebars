@@ -1,0 +1,35 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th scope="col">Package ID</th>
+            <th scope="col">Package</th>
+            <th scope="col">Num of Sessions</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+        </tr>
+        {{#each package}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.workout_type}}</td>
+            <td>{{this.session_count}}</td>
+            <td>$ {{this.price}}</td>
+            <td>
+                {{> package/package-block}}
+            </td>
+        </tr>
+        {{/each}}
+
+    </table>
+
+
+    {{!-- 
+    <ul>
+        {{#each package}}
+        <li>
+            {{this.id}}
+
+        </li>
+
+        {{/each}}
+    </ul> --}}
+</div>
