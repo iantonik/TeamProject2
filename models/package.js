@@ -8,6 +8,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         workout_type: {
             type: DataTypes.STRING
+        },
+        inactive: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     });
 
