@@ -25,7 +25,9 @@ module.exports = function (app) {
     });
 
     app.get("/clients/all", function(req, res) {
-        res.render("all-clients");
+        db.Client.findAll({}).then(function(data) {
+            res.render("all-clients", {client: data});
+        });
     });
 
     app.get("/packages/all", function(req, res){

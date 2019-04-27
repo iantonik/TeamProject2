@@ -1,5 +1,23 @@
 <p>hello all clients!</p>
-{{#each client}}
-{{first_name}}
-{{last_name}}
-{{/each}}
+<table>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Weight</th>
+    {{#each client}}
+    <tr>
+    <td>{{first_name}}</td>
+    <td>{{last_name}}</td>
+    <td>{{email}}</td>
+    <td>{{address}}</td>
+    <td>{{phone_number}}</td>
+    <td>{{gender}}</td>
+    <td>{{age}}</td>
+    <td>{{weight}}</td>
+    </tr>
+    {{/each}}
+</table>
