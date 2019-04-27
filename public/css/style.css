@@ -1,8 +1,55 @@
-h1{
-    color: blue;
-}
 
 #calendar {
     max-width: 900px;
     margin: 0 auto;
+}
+.bg1 {
+    background-image: url("/static/images/gym1.jpg");
+}
+
+.bgstyles {
+    height: 100vh;
+    width: 100%;
+    min-height: 350px;
+    background: no-repeat center center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/* h1{
+    color: blue;
+} */
+.logofont { 
+    font-family: 'Gugi', cursive;
+}
+.markfont { 
+    font-family: 'Permanent Marker', cursive;
+}
+.armyfont { 
+    font-family: 'Special Elite', cursive;
+}
+.speedfont { 
+    font-family: 'Faster One', cursive;
+}
+
+a {
+    color: white;
+    text-decoration: none;
   }
+a:hover {
+    text-decoration: none;
+}
+a.makearmy:hover {
+    text-decoration: none;
+    color: rgb(0, 68, 255);
+    font-family: 'Special Elite', cursive;
+    font-weight: bold;
+}
+.transbg {
+    background-color: rgba(0, 0, 0, 0.445);
+}
+
+.shadowed {
+    text-shadow: 2px 2px 4px #000000;
+}
