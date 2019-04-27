@@ -29,7 +29,18 @@ module.exports = function (app) {
     });
 
     app.get("/clients/all", function(req, res) {
-        console.log("a view of all clients");
+        db.Client.findAll({}).then(function(data) {
+            res.render("client", {client: data});
+        });
+    });
+
+    app.get("/clients/:id", function(req, res) {
+        var id = req.params.id;
+        db.Client.findAll({where: {
+            id: id
+        }}).then(function(data) {
+            res.render("client", {client: data});
+        });
     });
 
     app.get("/packages/all", function(req, res){
