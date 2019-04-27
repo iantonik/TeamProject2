@@ -22,4 +22,15 @@ app.put("/api/sessions", function(req, res) {
     });
 });
 
+app.delete("/api/sessions/:id", function(req, res) {
+    var id = req.params.id;
+    db.Session.destroy({
+        where: {
+            id: id
+        }
+    }).then(function(data) {
+        res.json(data);
+    });
+})
+
 };
