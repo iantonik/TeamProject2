@@ -8,7 +8,8 @@ const path = require('path')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use('/static', express.static('public'))
 app.use('/node_modules', express.static(path.join(__dirname,'node_modules')));
 
 app.use(express.urlencoded({extended: true}));
@@ -27,6 +28,7 @@ handlebars.registerHelper('moment', require('helper-moment'));
 require("./routes/html-routes.js")(app);
 require("./routes/client-api-routes.js")(app);
 require("./routes/session-api-routes.js")(app);
+require("./routes/package-api-routes.js")(app);
 
 
 
