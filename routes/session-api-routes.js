@@ -6,15 +6,20 @@ const Op = Sequelize.Op;
 module.exports = function (app) {
 
 app.post("/api/sessions/new", function(req, res) {
-    
-})
-
-app.get("/api/packages/:id/sessions", function(req, res) {
-    console.log("specific packages sessions");
+    db.Session.create(req.body).then(function(data) {
+        res.json(data);
+    });
 });
 
-app.get("/api/sessions/:id", function(req, res) {
-    console.log("specific session");
+app.put("/api/sessions", function(req, res) {
+    var id = req.body.id;
+    db.Session.update(req.body,
+        { where: {
+            id: id
+        }})
+        .then(function(data) {
+        res.json(data);
+    });
 });
 
 };
