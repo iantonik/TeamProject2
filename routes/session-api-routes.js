@@ -5,8 +5,8 @@ const Op = Sequelize.Op;
 
 module.exports = function (app) {
 
-app.get("/api/packages/:clientid", function(req, res) {
-    console.log("a package");
+app.post("/api/sessions/new", function(req, res) {
+    
 })
 
 app.get("/api/packages/:id/sessions", function(req, res) {

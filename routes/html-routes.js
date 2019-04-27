@@ -65,12 +65,8 @@ module.exports = function (app) {
         var id = req.params.id
         db.Session.findAll({where: {
             id: id
-        }, 
-        include: {
-            model: [db.Client]
         }}).then(function (response) {
-            console.log(response);
-            res.render("session", {session: response});
+            res.render("edit-view", {session: response});
         });
     });
 
