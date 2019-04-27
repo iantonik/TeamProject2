@@ -30,7 +30,7 @@ module.exports = function (app) {
 
     app.get("/clients/all", function(req, res) {
         db.Client.findAll({}).then(function(data) {
-            res.render("client", {client: data});
+            res.render("table-view", {client: data});
         });
     });
 
@@ -53,8 +53,11 @@ module.exports = function (app) {
     });
 
     app.get("/sessions/all", function(req, res) {
-        db.Session.findAll({}).then(function (response) {
-            res.render("session", {session: response});
+        db.Session.findAll({
+        include: {
+            model: db.Client
+        }}).then(function (response) {
+            res.render("table-view", {session: response});
         });
     });
 
@@ -62,7 +65,11 @@ module.exports = function (app) {
         var id = req.params.id
         db.Session.findAll({where: {
             id: id
+        }, 
+        include: {
+            model: [db.Client]
         }}).then(function (response) {
+            console.log(response);
             res.render("session", {session: response});
         });
     });
