@@ -1,0 +1,12 @@
+<script src="/js/all-sessions.js"></script>
+<table>
+    <th>Date & Time</th>
+    <th>ID</th>
+    {{#each session}}
+    <tr>
+    <td>{{schedule_date}}</td>
+    <td>{{id}}</td>
+    <td><button class="session" data-id={{id}}>View session</button></td>
+    </tr>
+    {{/each}}
+</table>

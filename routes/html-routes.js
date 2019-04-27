@@ -50,6 +50,21 @@ module.exports = function (app) {
             // res.json(response);
             res.render("package", {package: response})
         })
-    })
+    });
+
+    app.get("/sessions/all", function(req, res) {
+        db.Session.findAll({}).then(function (response) {
+            res.render("session", {session: response});
+        });
+    });
+
+    app.get("/sessions/:id", function(req, res) {
+        var id = req.params.id
+        db.Session.findAll({where: {
+            id: id
+        }}).then(function (response) {
+            res.render("session", {session: response});
+        });
+    });
 
 };
