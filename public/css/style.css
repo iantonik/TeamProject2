@@ -1,3 +1,29 @@
-h1{
+body {
+    /* background-color: black; */
+    color: white;
+    background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=3900&q=80");
+}
+/* h1{
     color: blue;
+} */
+.logofont { 
+    font-family: 'Gugi', cursive;
+}
+.markfont { 
+    font-family: 'Permanent Marker', cursive;
+}
+.armyfont { 
+    font-family: 'Special Elite', cursive;
+}
+.speedfont { 
+    font-family: 'Faster One', cursive;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+  }
+
+a:hover {
+text-decoration: none;
 }

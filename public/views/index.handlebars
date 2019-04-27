@@ -1,20 +1,47 @@
 <div class="container">
-    <h1>Single Trainer</h1>
+    <div class="jumbotron text-center bg-dark">
+        <h1 class="logofont mb-0 pb-0">FlexTrainer</h1>
+        <h4 class="markfont">Solo Edition</h4>   
+    </div>
+    
 
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="markfont">Upcoming Sessions:</h2>
+            <ul>
+                {{#each schedule}}
+                <li class="mb-1">
+                    {{this.Client.first_name}} 
+                    {{this.Client.last_name}}: 
+                    {{moment this.schedule_date lang="en" format="dddd, DD MMMM YYYY HH:mm A"}}
+                    <div class="btn btn-sm btn-primary">View Client</div>
+                </li>
+                
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2 class="markfont">Clients: Low Sessions</h2>
+            <ul>
+                {{#each schedule}}
+                <li class="mb-1">
+                    {{this.Client.first_name}} 
+                    {{this.Client.last_name}}: 
+                    3 Sessions Left 
+                    <div class="btn btn-sm btn-warning">View Client</div>
+                </li>
+                
+                {{/each}}
+            </ul>
+        </div>
 
-
-    <h2>Upcoming Sessions:</h2>
-    <ul>
-        {{#each schedule}}
-        <li>
-            {{this.Client.first_name}} 
-            {{this.Client.last_name}}: 
-            {{moment this.schedule_date lang="en" format="dddd, DD MMMM YYYY HH:mm A"}}
-
-        </li>
-        
-        {{/each}}
-    </ul>
-
+    </div>
+            <div class="row">
+            <div class="col-md-12">
+                <div class="btn btn-block btn-primary">Manage Clients</div>
+                <div class="btn btn-block btn-warning">Manage Package</div>
+                <div class="btn btn-block btn-info">Manage Sessions</div>
+            </div>
+        </div>
 
 </div>
