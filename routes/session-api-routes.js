@@ -5,16 +5,32 @@ const Op = Sequelize.Op;
 
 module.exports = function (app) {
 
-app.get("/api/packages/:clientid", function(req, res) {
-    console.log("a package");
+app.post("/api/sessions/new", function(req, res) {
+    db.Session.create(req.body).then(function(data) {
+        res.json(data);
+    });
+});
+
+app.put("/api/sessions", function(req, res) {
+    var id = req.body.id;
+    db.Session.update(req.body,
+        { where: {
+            id: id
+        }})
+        .then(function(data) {
+        res.json(data);
+    });
+});
+
+app.delete("/api/sessions/:id", function(req, res) {
+    var id = req.params.id;
+    db.Session.destroy({
+        where: {
+            id: id
+        }
+    }).then(function(data) {
+        res.json(data);
+    });
 })
-
-app.get("/api/packages/:id/sessions", function(req, res) {
-    console.log("specific packages sessions");
-});
-
-app.get("/api/sessions/:id", function(req, res) {
-    console.log("specific session");
-});
 
 };
