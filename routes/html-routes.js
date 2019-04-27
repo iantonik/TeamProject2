@@ -39,7 +39,7 @@ module.exports = function (app) {
         db.Client.findAll({where: {
             id: id
         }}).then(function(data) {
-            res.render("client", {client: data});
+            res.render("edit-view", {client: data});
         });
     });
 
