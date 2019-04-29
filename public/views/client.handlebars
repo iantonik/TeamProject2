@@ -12,15 +12,15 @@
         <th>Weight</th>
         {{#each client}}
         <tr>
-            <td>{{first_name}}</td>
-            <td>{{last_name}}</td>
+            <td id = "#current-client">{{this.first_name}}</td>
+            {{!-- <td>{{last_name}}</td>
             <td>{{email}}</td>
             <td>{{address}}</td>
             <td>{{phone_number}}</td>
             <td>{{gender}}</td>
             <td>{{age}}</td>
             <td>{{weight}}</td>
-            <td><button class="client" data-id={{id}}>View client</button></td>
+            <td><button class="client" data-id={{id}}>View client</button></td> --}}
         </tr>
         {{/each}}
     </table>

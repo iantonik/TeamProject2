@@ -11,9 +11,9 @@
 
 $(document).ready(function () {
 
-    $("#new-client").click(function () {
-        var newClient = {
-            "first_name": $("#firstName").val().trim(),
+    $("#current-client").click(function () {
+        var client = {
+            first_name: $("#firstName").val().trim(),
             "last_name": $("#lastName").val().trim(),
             "email": $("#email").val().trim(),
             "address": $("#address").val().trim(),
@@ -24,7 +24,7 @@ $(document).ready(function () {
             
         }
 
-        $.get("/api/clients", newClient);
+        $.get("/api/clients", client);
         location.reload();
 
       });  $.post("/api/clients/new", newClient);
