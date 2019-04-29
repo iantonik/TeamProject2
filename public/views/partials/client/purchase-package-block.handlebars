@@ -11,19 +11,21 @@
             <div class="modal-body">
                 <div class="formgroup">
                     <label for="sel1">Select purchased package:</label>
-                    <select class="form-control" id="selPkg">
-                        {{#each package}} 
+                    {{!-- <select class="form-control" id="selPkg">
+                        {{#each package}}
+                        {{#unless this.inactive}}
                         <option>
                             {{this.workout_type}}, {{this.session_count}}, $ {{this.price}}
                         </option>
+                        {{/unless}}
                         {{/each}}
-                    </select>
+                    </select> --}}
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" id="new-package" class="btn btn-primary">Add Package</button>
 
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
 
         </div>

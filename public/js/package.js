@@ -37,7 +37,7 @@ $(document).ready(function () {
         var id = $(this).attr("name");
         deletePkg(id);
 
-    })
+    });
 
     var deletePkg = function(id){
         $.ajax({
@@ -50,11 +50,11 @@ $(document).ready(function () {
         var id=$(this).attr("name");
         $(`.view-mode-${id}`).hide();
         $(`.edit-mode-${id}`).show();
-    })
+    });
 
     $(".cancel-edit-pkg").click(function(){
         location.reload();
-    })
+    });
 
     $(".save-pkg").click(function(){
         var id=$(this).attr("name");
@@ -68,7 +68,9 @@ $(document).ready(function () {
             count: pkgCount
         }
         updatePackage(id, postObj);
-    })
+    });
+
+
 
 
 });
