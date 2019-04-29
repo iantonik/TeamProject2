@@ -53,3 +53,12 @@ a.makearmy:hover {
 .shadowed {
     text-shadow: 2px 2px 4px #000000;
 }
+
+.table{
+    color: white
+}
+
+.action{
+    margin: 5px;
+    font-size: large;
+}

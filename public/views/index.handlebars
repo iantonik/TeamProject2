@@ -1,3 +1,11 @@
+
+<div class="row mt-3">
+    <h2 class="text-light armyfont ml-3">Clients with low session count:</h2>
+    <div id="client-list" class="text-light markfont shadowed">
+
+    </div>
+</div>
+
 <div class="row mt-3">
     <h2 class="text-light armyfont ml-3">Upcoming Sessions:</h2>
     <div id="calendar" class="text-light markfont shadowed"></div>
@@ -7,14 +15,16 @@
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+        slotDuration: '00:30',
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+       defaultView: 'timeGridWeek',
         header: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
         navLinks: true, // can click day/week names to navigate views
-        editable: true,
+        editable: false,
         eventLimit: true, // allow "more" link when too many events
         events: [
         {{#each schedule}}
@@ -27,6 +37,8 @@
           
         ]
     });
+    var slotDuration = calendar.getOption('slotDuration')
+console.log(slotDuration);
   
     calendar.render();
   });

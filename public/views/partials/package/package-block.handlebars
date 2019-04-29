@@ -1,4 +1,4 @@
 
-		{{#if this.inactive}}<a href="#" class="inactive" id={{this.id}}><i class="fas fa-ban"></i></a>
-        {{else}}<a href="#" class="active" id={{this.id}}> <i class="far fa-check-circle"></i></a>
+		{{#if this.inactive}}<a href="#" class="inactive action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-ban"></i></a>
+        {{else}}<a href="#" class="active action view-mode-{{this.id}}" name="{{this.id}}"> <i class="far fa-check-circle"></i></a>
         {{/if}}

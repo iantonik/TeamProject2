@@ -32,8 +32,10 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: true
             }
         }
+
         
-        Client.hasMany(models.Session)
+        Client.hasMany(models.Session);
+
     }
 
     return Client;
