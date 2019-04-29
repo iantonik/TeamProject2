@@ -53,6 +53,9 @@
             <li class="nav-item">
                 <a class="nav-link text-warning makearmy" href="/packages/all">Packages</a>
             </li>
+            <li class="nav-item">
+                <a id="infomodal"class="nav-link text-warning makearmy" href="#">About FlexTrainer</a>
+            </li>            
             </ul>
         </div>
         </div>
@@ -68,6 +71,67 @@
     
 </div>
 
+    {{!-- Info/Demo Modal --}}
+
+<div class="modal fade bg4" id="displayModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg bg-none" role="document">
+        <div class="modal-content rounded" style="background-color: rgba(58, 58, 58, 0.445)">            
+            <div class="modal-header">
+              <h1 class="modal-title logofont ml-5 text-primary shadowed ">Flex<span class="text-warning">Trainer</span></h1><br>
+              <h6 class="text-light markfont shadowed">Work Less, Workout More</h6>
+            </div>   
+            <div class="modal-body text-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+
+
+                      <div id="info1" class="carousel-item active text-white text-center">
+                          <div class="" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
+                            <h3 class="float-center text-white armyfont">Manage your workout sessions and clients in a quick and effective way with FlexTrainer.  </h3>
+                          </div>
+
+                      </div>
+                      <div id="info2" class="carousel-item text-white">
+                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
+                            <h3 class="text-white armyfont">View your clients data and adjust their individual workout routines, scheduling, and more.</h3>
+                          </div>
+                      </div>
+                      {{!-- <div id="info3" class="carousel-item text-white">
+                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
+                            <h3 class="text-white armyfont">FlexTrainer gives you the tools to allow you to work less, so you can workout more.</h3>
+                          </div>
+                      </div> --}}
+
+
+
+                    </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>                   
+                </div>
+
+            </div>
+            
+            <div class="modal-footer item-center">
+                <a href="/" class="btn btn-lg btn-outline-dark btn-block text-light logoright"><h3>Back to <span class="logofont text-primary">Flex</span><span class="text-warning">Trainer</span></h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -75,5 +139,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        $("#infomodal").on("click", function(event) {
+            $('#displayModal').modal('show'); 
+        })
+
+
+    </script>
 </body>
 </html>
