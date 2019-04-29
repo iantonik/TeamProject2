@@ -5,31 +5,38 @@
     <script src="/static/js/all-clients.js"></script>
     {{!-- <table class="table table-striped text-light markfont"> --}}
         <table class="table">
-        <th scope="col">First Name  </th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Age</th>
-        <th scope="col">Weight</th>
-        <th scope="col">Actions</th>
-        {{#each client}}
-        <tr >
-        <td>{{first_name}}</td>
-        <td>{{last_name}}</td>
-        <td>{{email}}</td>
-        <td>{{address}}</td>
-        <td>{{phone_number}}</td>
-        <td>{{gender}}</td>
-        <td>{{age}}</td>
-        <td>{{weight}}</td>
-        <td>
-        <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button>
-        {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
-        </td>
-        </tr>
-        {{/each}}
-    </table>
+            <th scope="col">First Name </th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Actions</th>
+            {{!-- {#each client}} --}}
+            {{!-- <tr>
+                <td>{{first_name}}</td>
+                <td>{{last_name}}</td>
+                <td>{{email}}</td>
+                <td>{{address}}</td>
+                <td>{{phone_number}}</td>
+                <td>{{gender}}</td>
+                <td>{{age}}</td>
+                <td>{{weight}}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button>
+                    {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
+                    {{!-- </td>
+            </tr> --}}
+            {{!-- {{/each}} - --}}
+
+            <td>
+                <span id="name-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.first_name}}}</span>
+                <input type='text' id="name-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.first_name}}"
+                    style="display: none" />
+            </td>
+
+        </table>
 
 </div>
