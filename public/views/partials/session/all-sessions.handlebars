@@ -1,16 +1,25 @@
+<div class="row mt-3">
+    <h2 class="text-light armyfont ml-3 shadowed">Sessions View:</h2>
+</div>
+
+<div>
+    <table class="text-light">
+        <th>Schedule Date</th>
+        <th>Used Date</th>
+        <th>First name</th>
+        <th>Last name</th>
+        {{#each session}}
+        <tr>
+        <td>{{schedule_date}}</td>
+        <td>{{executed_date}}</td>
+        <td>{{Client.first_name}}</td>
+        <td>{{Client.last_name}}</td>
+        <td><button class="session" data-id={{id}}>Edit session</button></td>
+        </tr>
+        {{/each}}
+    </table>
+    
+</div>
+
+
 <script src="/static/js/all-sessions.js"></script>
-<table>
-    <th>Schedule Date</th>
-    <th>Used Date</th>
-    <th>First name</th>
-    <th>Last name</th>
-    {{#each session}}
-    <tr>
-    <td>{{schedule_date}}</td>
-    <td>{{executed_date}}</td>
-    <td>{{Client.first_name}}</td>
-    <td>{{Client.last_name}}</td>
-    <td><button class="session" data-id={{id}}>Edit session</button></td>
-    </tr>
-    {{/each}}
-</table>
