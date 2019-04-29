@@ -24,9 +24,12 @@ $(document).ready(function () {
             
         }
 
-        $.post("/api/clients/new", newClient);
+        $.get("/api/clients", newClient);
         location.reload();
-    });
+
+      });  $.post("/api/clients/new", newClient);
+        location.reload();
+    
     
     function updateClient(client) {
         $.ajax({
