@@ -6,8 +6,11 @@ $(function () {
         var inputID = sessionID + "-input";
         var saveID = sessionID + "-save";
         var calSelect = $(`<input id=${inputID} class=\"cal-select\">`);
+        var title = ""
         $(this).parent().append(calSelect);
-        var saveButton = $(`<button id=${saveID} class=\"save-button\">Save</button>`);
+        // var saveButton = $(`<button id=${saveID} class=\"save-button\">Save</button>`);
+        var saveButton = $(`<a href=\"#\" class=\"save-button ml-1\" id=${saveID}><i class=\"far fa-calendar-check\" data-toggle=\"tooltip\" data-html=\"true\" title=\'Save Session\'></i></a>`);
+
         $(this).parent().append(saveButton);
         $(this).hide();
 
