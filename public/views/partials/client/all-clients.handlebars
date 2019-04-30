@@ -28,7 +28,7 @@
             <td>
                 <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button>
                 <button class="btn buy-package btn-sm btn-outline-light armyfont" data-toggle="modal"
-                    data-target="#purchase-package" id="{{id}}">Add Package</button>
+                    data-target="#purchase-package" name="{{id}}">Buy Package</button>
             </td>
         </tr>
         {{/each}}
@@ -49,15 +49,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="formgroup">
-                    <label for="sel1">Select package:</label>
-                    <select class="form-control" id="selPkg">
-{{!-- Options dropdown populated by buy-package.js --}}
-                    </select>
-                </div>
+                <form id="buy-package-form">
+                    <div class="form-group">
+                        <input type="hidden" id="purchasing-clientID" name="clientID" value="">
+                    </div>
+                    <div class="form-group">
+
+                        <label for="selPkg">Select package:</label>
+                        <select class="form-control" id="selPkg">
+                            {{!-- Options dropdown populated by buy-package.js --}}
+                        </select>
+
+                    </div>
+                {{!-- <button type="submit" id="pur-button" class="btn btn-primary">Submit</button> --}}
+
+                </form>
+
+
+
             </div>
             <div class="modal-footer">
-                <button type="button" id="purchase-package" class="btn btn-primary">Purchase Package</button>
+
+                <a href="#" id="btn-purchase-package" class="btn btn-success success">Purchase Package</a>
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
