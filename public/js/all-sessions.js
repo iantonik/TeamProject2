@@ -4,24 +4,38 @@ $(function () {
         var sessionID = $(this).data("id");
         var inputID = sessionID + "-input";
         var saveID = sessionID + "-save";
-        var calSelect = $(this).parent().append(`<input id=${inputID} class=\"cal-select\">`);
-        var saveButton = $(this).parent().append(`<button id=${saveID} class=\"cal-select\">Save</button>`);
+        var calSelect = $(`<input id=${inputID} class=\"cal-select\">`);
+        $(this).parent().append(calSelect);
+        var saveButton = $(`<button id=${saveID} class=\"save-button\">Save</button>`);
+        $(this).parent().append(saveButton);
         $(this).hide();
 
-        $(calSelect).flatpickr({
+        $(`#${inputID}`).flatpickr({
             enableTime: true,
             onChange: function(dateStr) {
-                console.log(calSelect);
-                $(`#${inputID}`).val(dateStr),
-                $(`#${inputID}`).hide()
+                console.log("clicked");
+                $(`#${inputID}`).val(dateStr)
+                // $(`#${inputID}`).hide()
             }
         });
 
+
         $(saveButton).on("click", function() {
-            console.log(saveButton);
-            console.log(calSelect);
-            // $(editButton).show();
-            console.log("saved");
+            $(editButton).show();
+            $(saveButton).hide();
+            $(calSelect).hide();
+            var scheduledTime = $(calSelect).val();
+            $.ajax({
+                type: "PUT",
+                url: `/api/sessions`,
+                data: {
+                    id: sessionID,
+                    schedule_date: scheduledTime
+                }
+            }).then(function(data) {
+                location.reload();
+                console.log(data);
+            });
         })
     });
 });
