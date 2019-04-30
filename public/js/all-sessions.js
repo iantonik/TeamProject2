@@ -1,5 +1,6 @@
 $(function () {
     $(".edit-session").on("click", function() {
+        // create & track all buttons
         var editButton = $(this);
         var sessionID = $(this).data("id");
         var inputID = sessionID + "-input";
@@ -10,16 +11,17 @@ $(function () {
         $(this).parent().append(saveButton);
         $(this).hide();
 
+
+        // use flatpickr library to select date
         $(`#${inputID}`).flatpickr({
             enableTime: true,
             onChange: function(dateStr) {
-                console.log("clicked");
                 $(`#${inputID}`).val(dateStr)
-                // $(`#${inputID}`).hide()
             }
         });
 
 
+        // manage butt/input display. Put new scheduled time and reload page
         $(saveButton).on("click", function() {
             $(editButton).show();
             $(saveButton).hide();
@@ -34,7 +36,6 @@ $(function () {
                 }
             }).then(function(data) {
                 location.reload();
-                console.log(data);
             });
         })
     });
