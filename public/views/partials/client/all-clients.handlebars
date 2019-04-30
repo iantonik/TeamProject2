@@ -7,13 +7,13 @@
         <table class="table">
             <th scope="col">First Name  </th>
             <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Address</th>
+            <th scope="col">Email Address</th>
+            {{!-- <th scope="col">Address</th> --}}
             <th scope="col">Phone Number</th>
-            <th scope="col">Gender</th>
+            {{!-- <th scope="col">Gender</th>
             <th scope="col">Age</th>
-            <th scope="col">Weight</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Weight</th> --}}
+            <th scope="col">Client Actions</th>
         
         {{#each client}}
 
@@ -33,17 +33,17 @@
                 <input type='text' id="email-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.email}}" style="display: none" />
             </td>
 
-            <td>
+            {{!-- <td>
                 <span id="address-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.address}}</span>
                 <input type='text' id="address-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.address}}" style="display: none" />
-            </td>
+            </td> --}}
 
             <td>
                 <span id="phone-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.phone_number}}</span>
                 <input type='text' id="phone-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.phone_number}}" style="display: none" />
             </td>
 
-            <td>
+            {{!-- <td>
                 <span id="gender-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.gender}}</span>
                 <input type='text' id="gender-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.gender}}" style="display: none" />
             </td>
@@ -56,7 +56,7 @@
             <td>
                 <span id="weight-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.weight}}</span>
                 <input type='text' id="weight-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.weight}}" style="display: none" />
-            </td>
+            </td> --}}
 
             <td>
                 <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"></i></a>
@@ -64,10 +64,13 @@
                 
                 <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square"></i></a>
                 <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close"></i></a>
+                <a href="#" class="buy-package armyfont" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>
             {{!-- <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button> --}}
             {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
             </td>
         </tr>
+
+
         {{/each}}
     </table>
 
