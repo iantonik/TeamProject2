@@ -14,12 +14,13 @@
         <td>{{executed_date}}</td>
         <td>{{Client.first_name}}</td>
         <td>{{Client.last_name}}</td>
-        <td><button class="session" data-id={{id}}>Edit session</button></td>
+        <td><button class="edit-session" data-id={{id}}>Edit session</button></td>
         </tr>
         {{/each}}
     </table>
     
 </div>
 
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="/static/js/all-sessions.js"></script>
