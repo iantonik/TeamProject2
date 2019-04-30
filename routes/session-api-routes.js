@@ -29,6 +29,9 @@ app.delete("/api/sessions/:id", function(req, res) {
             id: id
         }
     }).then(function(data) {
+        data = data.map(function(data) {
+            conse.log(data.schedule_date);
+        });
         res.json(data);
     });
 })
