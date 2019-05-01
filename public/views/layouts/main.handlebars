@@ -38,26 +38,26 @@
     <div class="row mb-5 mp-5">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-        <a class="navbar-brand text-primary logofont" href="/">Flex<span class="text-warning">Trainer</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand logofont" href="/"><span class="text-primary">Flex</span><span class="text-warning">Trainer</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse logofont " id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link text-warning makearmy" href="/clients/all">Clients</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-warning makearmy" href="/sessions/all">Sessions</a>
-            </li>            
-            <li class="nav-item">
-                <a class="nav-link text-warning makearmy" href="/packages/all">Packages</a>
-            </li>
-            <li class="nav-item">
-                <a id="infomodal"class="nav-link text-warning makearmy" href="#">About FlexTrainer</a>
-            </li>            
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse logofont " id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-warning makearmy" href="/clients/all">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning makearmy" href="/sessions/all">Sessions</a>
+                </li>            
+                <li class="nav-item">
+                    <a class="nav-link text-warning makearmy" href="/packages/all">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a id="infomodal"class="nav-link text-warning makearmy" href="#">About FlexTrainer</a>
+                </li>            
+                </ul>
+            </div>
         </div>
     </nav>
     </div>
@@ -86,7 +86,8 @@
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> 
+                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> 
                     </ol>
                     <div class="carousel-inner">
 
@@ -105,16 +106,22 @@
 
                       <div id="info3" class="carousel-item text-white">
                           <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">Create workout packages and customize sessions and packages in one go.</h3>
+                            <h3 class="text-white armyfont">Create workout packages and customize sessions, packages and pricing in one go.</h3>
                           </div>
                       </div>
 
                       <div id="info4" class="carousel-item text-white">
                           <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">FlexTrainer gives you the tools to allow you to work less, so you can workout more.</h3>
+                            <h3 class="text-white armyfont">Designed and built from the ground up to be mobile first. Access FlexTrainer's powerful tools on the go.</h3>
                           </div>
                       </div>
 
+
+                      <div id="info5" class="carousel-item text-white">
+                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
+                            <h3 class="text-white armyfont">FlexTrainer gives you the tools to allow you to work less, so you can workout more.</h3>
+                          </div>
+                      </div>
 
 
                     </div>
@@ -151,8 +158,9 @@
         $("#infomodal").on("click", function(event) {
             $('#displayModal').modal('show'); 
         })
-
-
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 </html>
