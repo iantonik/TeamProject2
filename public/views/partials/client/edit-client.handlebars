@@ -16,11 +16,12 @@
     
     <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
     <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
-    <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Workout Packages</b>"></i></a>
+    <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>
+    {{!-- <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Workout Packages</b>"></i></a> --}}
+    <a href="/clients/all"><button class="float-right btn btn-outline-secondary"><i class="fas fa-arrow-circle-left"></i> Back to Clients</button></a>
   </div>
   <div class="card-body">
         <form class="text-light">
-        
         <div class="form-group row">
             <label class="col-sm-2 col-form-label col-form-label-md">First Name:</label>
             <div class="col-sm-10">
