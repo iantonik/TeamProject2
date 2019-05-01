@@ -6,6 +6,7 @@
 </div>
 <div>
     <script src="/static/js/all-clients.js"></script>
+    <script src="/static/js/buy-package.js"></script>
     {{!-- <table class="table table-striped text-light markfont"> --}}
         <table class="table">
             <th scope="col">First Name  </th>
@@ -76,6 +77,7 @@
                 {{!-- <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Workout Packages</b>"></i></a> --}}
 
 
+
               {{!-- <div class="btn-group" role="group" >
                 
                 <button type="button" class="btn btn-secondary">
@@ -111,4 +113,49 @@
         {{/each}}
     </table>
 
+</div>
+
+
+
+{{!-- Purchase package model --}}
+
+<div class="modal fade" id="purchase-package" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="packageModalLabel">Purchased Package</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="buy-package-form">
+                    <div class="form-group">
+                        <input type="hidden" id="purchasing-clientID" name="clientID" value="">
+                    </div>
+                    <div class="form-group">
+
+                        <label for="selPkg">Select package:</label>
+                        <select class="form-control" id="selPkg">
+                            {{!-- Options dropdown populated by buy-package.js --}}
+                        </select>
+
+                    </div>
+                {{!-- <button type="submit" id="pur-button" class="btn btn-primary">Submit</button> --}}
+
+                </form>
+
+
+
+            </div>
+            <div class="modal-footer">
+
+                <a href="#" id="btn-purchase-package" class="btn btn-success success">Purchase Package</a>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
 </div>

@@ -81,3 +81,21 @@ a.makearmy:hover {
     margin: 5px;
     font-size: large;
 }
+
+/* schedule - date time format */
+.add{
+    color: white;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.note {
+    font-size: .8em;
+}
