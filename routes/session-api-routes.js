@@ -7,9 +7,11 @@ module.exports = function (app) {
 
 app.post("/api/sessions/new", function(req, res) {
     console.log("print req.body "+req.body);
-    db.Session.create(req.body).then(function(data) {
-        res.json(data);
+    var promises = [];
+    req.body.data.forEach(element => {
+        promises.push(db.Session.create(element));
     });
+    Promise.all(promises).then(responses => res.json(responses));
 });
 
 app.put("/api/sessions", function(req, res) {

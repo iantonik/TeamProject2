@@ -9,16 +9,18 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Session.associate = function (models) {
-        Session.belongsTo(models.Package),{
+        Session.belongsTo(models.Package,{
             foreignKey:{
                 allowNull: false
-            }
-        }
-        Session.belongsTo(models.Client),{
+            },
+            onDelete: 'CASCADE'
+        })
+        Session.belongsTo(models.Client,{
             foreignKey:{
                 allowNull: false
-            }
-        }
+            },
+            onDelete: 'CASCADE' 
+        })
     }
 
     // Session.associate = function (models) {

@@ -34,8 +34,9 @@ $(document).ready(function () {
         console.log("client ID is", clientID);
         console.log("pkg ID is", pkgId);
         console.log("Session Count: ", + sessionCount);
-        // updateClient(clientID, pkgId);
-        addSessions(clientID, pkgId)
+        
+        addSessions(clientID, pkgId, sessionCount)
+        updateClient(clientID, pkgId);
     });
 
 
@@ -47,13 +48,19 @@ $(document).ready(function () {
         }).then(location.reload());
     }
 
-    var addSessions = function(id, pkgId){
-        var newSessions = {
-            "ClientID": 2,
-            "PackageID": 3
+    var addSessions = function(id, pkgId, sessionCount){
+        var newSessions=[];
+        
+        var temp = {
+            "ClientId": id,
+            "PackageId": pkgId
         }
 
-        $.post("/api/sessions/new", newSessions);
+        for(var i=0; i < sessionCount; i++){
+            newSessions.push(temp);
+        }
+
+        $.post("/api/sessions/new", {data: newSessions});
     }
 
 });

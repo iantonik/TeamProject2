@@ -7,7 +7,6 @@ const Op = Sequelize.Op;
 
 module.exports = function (app) {
     app.get("/", function (req, res) {
-        
         db.Session.findAll({
             include: [
                 {
@@ -25,7 +24,8 @@ module.exports = function (app) {
             })
             // res.json(retVal)
             res.render("index", {schedule: retVal});
-        });
+        }).catch((err) => 
+        res.write(err));
     });
 
     app.get("/clients/all", function(req, res) {

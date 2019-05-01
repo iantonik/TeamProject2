@@ -16,8 +16,13 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Package.associate = function (models) {
-        Package.hasOne(models.Client);
-        Package.hasOne(models.Session);
+        Package.hasMany(models.Client);
+        Package.hasMany(models.Session, {
+            foreignKey:{
+                allowNull: false
+            },
+            onDelete: 'CASCADE'
+        });
     };
 
 
