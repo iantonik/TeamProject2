@@ -57,11 +57,6 @@ module.exports = function (app) {
         include: {
             model: db.Client
         }}).then(function (response) {
-            response.map(function(response) {
-                response.schedule_time = moment(response.schedule_date).format("dddd, MMMM Do YYYY, h:mm:ss a");
-                console.log(response.schedule_time);
-                return response.schedule_time;
-            });
             res.render("table-view", {session: response});
         });
     });
