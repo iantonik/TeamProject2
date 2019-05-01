@@ -1,5 +1,22 @@
 $(document).ready(function () {
 
+    $("#new-Client").click(function () {
+        var newClient = {
+            "first_name": $("#firstName").val().trim(),
+            "last_namet": $("#lastName").val().trim(),
+            "email": $("#Client-email").val().trim(),
+            "address": $("#client-address").val().trim(),
+            "phone_number": $("#phoneNumber").val().trim(),
+            "gender": $("#client-gender").val().trim(),
+            "age": $("#client-age").val().trim(),
+            "weight": $("#client-weight").val().trim()
+        }
+
+        $.post("/api/clients/new", newClient);
+        location.reload();
+    });
+
+
     $(function () {
         console.log("Client View displayed");
         $(".client").on("click", function() {

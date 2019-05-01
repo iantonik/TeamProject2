@@ -10,8 +10,8 @@ module.exports = function (app) {
 
     app.post("/api/clients/new", function(req, res) {
         console.log("heres a new client");
-        db.Client.create(req.body).then(function(dbClients) {
-            res.json(dbClients);
+        db.Client.create(req.body).then(function(dbClient) {
+            res.json(dbClient);
           });
     });
 
@@ -59,8 +59,8 @@ module.exports = function (app) {
           where: {
             id: req.params.id
           }
-        }).then(function(dbClients) {
-          res.json(dbClients);
+        }).then(function(dbClient) {
+          res.json(dbClient);
         });
       });
     
