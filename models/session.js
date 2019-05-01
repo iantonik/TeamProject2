@@ -9,32 +9,21 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Session.associate = function (models) {
-        Session.belongsTo(models.Package),{
+        Session.belongsTo(models.Purchase,{
             foreignKey:{
                 allowNull: false
-            }
-        }
-        Session.belongsTo(models.Client),{
+            },
+            onDelete: 'CASCADE'
+        })
+        Session.belongsTo(models.Client,{
             foreignKey:{
                 allowNull: false
-            }
-        }
+            },
+            onDelete: 'CASCADE' 
+        })
     }
 
-    // Session.associate = function (models) {
-    //     Session.hasOne(models.Package, {
-    //         foreignKey: {
-    //             //Bug: allowNull is not set to false when table is created.
-    //             allowNull: false
-    //         },
-    //     })
-    //     Session.hasOne(models.Client, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     })
-    // };
+
     
     return Session;
 };
-

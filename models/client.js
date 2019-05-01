@@ -27,17 +27,15 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Client.associate = function (models) {
-        Client.belongsTo(models.Package),{
+        // Client.belongsTo(models.Package);
+        Client.hasMany(models.Session, {
             foreignKey:{
-                allowNull: true
-            }
-        }
-
-        
-        Client.hasMany(models.Session);
+                allowNull: false
+            },
+            onDelete: 'CASCADE'
+        });
 
     }
 
     return Client;
 }
-
