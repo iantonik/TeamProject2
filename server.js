@@ -29,6 +29,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/client-api-routes.js")(app);
 require("./routes/session-api-routes.js")(app);
 require("./routes/package-api-routes.js")(app);
+require("./routes/purchase-api-routes")(app);
 
 
 

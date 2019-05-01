@@ -3,6 +3,26 @@ const Sequelize = require('sequelize');
 
 
 module.exports = function (app) {
+  app.get("/api/package/all", function (req, res) {
+
+    db.Package.findAll({
+
+    }).then(function (response) {
+      res.json(response);
+    })
+  })
+
+  app.get("/api/package/:id", function (req, res) {
+    var id = req.params.id;
+    db.Package.findAll({
+      where: {
+        id: id
+      }
+
+    }).then(function (response) {
+      res.json(response);
+    })
+  })
 
   app.post("/api/package/new", function (req, res) {
     console.log(req.body)
@@ -22,20 +42,20 @@ module.exports = function (app) {
     if (req.body.count) updateObj.session_count = req.body.count;
 
     db.Package.update(updateObj, {
-        where: {
-          id: id
-        }
-      }).then(function (dbPackage) {
-        res.json(dbPackage);
-      });
+      where: {
+        id: id
+      }
+    }).then(function (dbPackage) {
+      res.json(dbPackage);
+    });
   });
 
-  app.delete("/api/package/:id", function(req, res) {
+  app.delete("/api/package/:id", function (req, res) {
     db.Package.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbTodo) {
+    }).then(function (dbTodo) {
       res.json(dbTodo);
     });
 
