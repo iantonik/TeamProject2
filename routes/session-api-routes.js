@@ -6,6 +6,7 @@ const Op = Sequelize.Op;
 module.exports = function (app) {
 
 app.post("/api/sessions/new", function(req, res) {
+    console.log("print req.body "+req.body);
     db.Session.create(req.body).then(function(data) {
         res.json(data);
     });

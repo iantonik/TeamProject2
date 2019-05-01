@@ -29,7 +29,8 @@ module.exports = function (app) {
       if (req.body.gender) clientObj.gender = req.body.gender;
       if (req.body.age) clientObj.age = req.body.age;
       if (req.body.weight) clientObj.weight = req.body.weight;
-  
+      if (req.body.packageId) clientObj.PackageId = req.body.packageId;
+    
       db.Client.update(clientObj, {
           where: {
             id: id
@@ -40,20 +41,20 @@ module.exports = function (app) {
     });
 
 
-    //omar: not used?
-    app.put("/api/clients/edit/:id", function(req, res) {
-        console.log("editing a client");
-        db.Client.update(
-            req.body,
-            {
-                where: {
-                    id: req.params.id
-                }
-            }
-        ).then(function(dbClients) {
-            res.json(dbClients);
-        });
-    })
+    // //omar: not used?
+    // app.put("/api/clients/edit/:id", function(req, res) {
+    //     console.log("editing a client");
+    //     db.Client.update(
+    //         req.body,
+    //         {
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         }
+    //     ).then(function(dbClients) {
+    //         res.json(dbClients);
+    //     });
+    // })
     app.delete("/api/clients/:id", function(req, res) {
         db.Client.destroy({
           where: {

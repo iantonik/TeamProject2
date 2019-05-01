@@ -4,6 +4,16 @@ const Sequelize = require('sequelize');
 
 module.exports = function (app) {
 
+  app.get("/api/package/all", function(req, res){
+    db.Package.findAll({
+
+    }).then(function(response){
+        res.json(response);
+        // return response
+        // res.render("package", {package: response})
+    })
+  })
+
   app.post("/api/package/new", function (req, res) {
     console.log(req.body)
     db.Package.create(req.body).then(function (dbPackage) {
