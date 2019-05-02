@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#new-Client").click(function () {
         var newClient = {
             "first_name": $("#firstName").val().trim(),
-            "last_namet": $("#lastName").val().trim(),
+            "last_name": $("#lastName").val().trim(),
             "email": $("#Client-email").val().trim(),
             "address": $("#client-address").val().trim(),
             "phone_number": $("#phoneNumber").val().trim(),
@@ -15,8 +15,7 @@ $(document).ready(function () {
         $.post("/api/clients/new", newClient);
         location.reload();
     });
-
-
+    
     $(function () {
         console.log("Client View displayed");
         $(".client").on("click", function() {
@@ -86,6 +85,14 @@ $(document).ready(function () {
             weight: weight
         }
         updateClient(id, clientUpdate);
+
     })
+
+    var addClient = function(id){
+        $.ajax({
+            method: "GET",
+            url: `/api/client/${id}`
+        }).then(location.reload())
+    }
 
 });
