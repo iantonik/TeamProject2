@@ -21,7 +21,7 @@
         {{#each session}}
         <tr>
             <td>{{moment this.schedule_date lang="en" format="dddd, MMMM Do YYYY, h:mm a"}}</td>
-            {{#if this.executed_date}}
+            {{#if this.executed_Date}}
             <td>{{moment this.executed_Date lang="en" format="dddd, MMMM Do YYYY, h:mm a"}}</td>
             {{else}}
             <td>{{this.executed_Date}}</td>
