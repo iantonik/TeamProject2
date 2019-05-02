@@ -11,6 +11,20 @@ app.post("/api/sessions/new", function(req, res) {
     });
 });
 
+app.get("/api/sessions/client/:client_id", function(req, res) {
+        var client_id = req.params.client_id
+        db.Session.findAll({
+            attributes: [[Sequelize.fn("COUNT", Sequelize.col("id")), "client"]],
+            group: ["ClientId"],
+            where: {
+                ClientId: client_id
+            } 
+        })
+        .then(function(data) {
+            res.json(data);
+        });
+    });
+
 app.put("/api/sessions", function(req, res) {
     var id = req.body.id;
     db.Session.update(req.body,
