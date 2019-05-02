@@ -8,7 +8,7 @@
     <h2 class="text-light armyfont ml-3">Upcoming Sessions:</h2>
 </div>
 <div class="row mt-0">
-    <div id="calendar" class="text-light markfont shadowed"></div>
+    <div id="calendar" class="frosty text-light"></div>
 </div>
 
 <script>
@@ -17,11 +17,18 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
         slotDuration: '00:30',
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-       defaultView: 'timeGridWeek',
+       defaultView: 'timeGridFourDay',
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            right: 'dayGridMonth,timeGridFourDay,timeGridDay,listMonth'
+        },
+        views: {
+            timeGridFourDay: {
+            type: 'timeGrid',
+            duration: { days: 4 },
+            buttonText: '4 day'
+            }
         },
         navLinks: true, // can click day/week names to navigate views
         editable: false,
