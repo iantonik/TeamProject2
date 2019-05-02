@@ -1,20 +1,18 @@
 <div class="row mt-3">
     <div class="col-md-12">
         <h2 class="text-light armyfont ml-3 shadowed float-left">Clients View:</h2>
-
-        <a href="/api/clients/new"><button class="float-right btn btn-outline-dark"><i class="fas fa-user-plus"></i> Add New Client</button></a>
-
-        <button class="float-right btn btn-outline-dark" data-toggle="modal" data-target="#clientModal"><i class="fas fa-user-plus"></i> Add New Client</button>
-
+        <button class="float-right btn btn-outline-dark" data-toggle="modal" data-target="#clientModal"><i class="fas fa-user-plus"></i>
+            Add New Client</button>
     </div>
 </div>
 <div>
-    
+
     <script src="/static/js/all-clients.js"></script>
-    {{!-- <script src="/static/js/buy-package.js"></script> --}}
+    {{!--
+    <script src="/static/js/buy-package.js"></script> --}}
     {{!-- <table class="table table-striped text-light markfont"> --}}
         <table class="table">
-            <th scope="col">First Name  </th>
+            <th scope="col">First Name </th>
             <th scope="col">Last Name</th>
             <th scope="col">Email Address</th>
             {{!-- <th scope="col">Address</th> --}}
@@ -23,100 +21,121 @@
             <th scope="col">Age</th>
             <th scope="col">Weight</th> --}}
             <th scope="col">Client Actions</th>
-        
-        {{#each client}}
 
-        <tr>
-            <td>
-                <span id="fname-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.first_name}}</span>
-                <input type='text' id="fname-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.first_name}}" style="display: none" /> 
-            </td>
+            {{#each client}}
 
-            <td>
-                <span id="lname-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.last_name}}</span>
-                <input type='text' id="lname-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.last_name}}" style="display: none" />
-            </td>
+            <tr>
+                <td>
+                    <span id="fname-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.first_name}}</span>
+                    <input type='text' id="fname-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.first_name}}"
+                        style="display: none" />
+                </td>
 
-            <td>
-                <span id="email-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.email}}</span>
-                <input type='text' id="email-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.email}}" style="display: none" />
-            </td>
+                <td>
+                    <span id="lname-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.last_name}}</span>
+                    <input type='text' id="lname-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.last_name}}"
+                        style="display: none" />
+                </td>
 
-            {{!-- <td>
-                <span id="address-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.address}}</span>
-                <input type='text' id="address-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.address}}" style="display: none" />
-            </td> --}}
+                <td>
+                    <span id="email-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.email}}</span>
+                    <input type='text' id="email-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.email}}"
+                        style="display: none" />
+                </td>
 
-            <td>
-                <span id="phone-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.phone_number}}</span>
-                <input type='text' id="phone-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.phone_number}}" style="display: none" />
-            </td>
+                {{!-- <td>
+                    <span id="address-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.address}}</span>
+                    <input type='text' id="address-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.address}}"
+                        style="display: none" />
+                </td> --}}
 
-            {{!-- <td>
-                <span id="gender-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.gender}}</span>
-                <input type='text' id="gender-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.gender}}" style="display: none" />
-            </td>
+                <td>
+                    <span id="phone-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.phone_number}}</span>
+                    <input type='text' id="phone-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.phone_number}}"
+                        style="display: none" />
+                </td>
 
-            <td>
-                <span id="age-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.age}}</span>
-                <input type='text' id="age-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.age}}" style="display: none" />
-            </td>
+                {{!-- <td>
+                    <span id="gender-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.gender}}</span>
+                    <input type='text' id="gender-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.gender}}"
+                        style="display: none" />
+                </td>
 
-            <td>
-                <span id="weight-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.weight}}</span>
-                <input type='text' id="weight-edit-{{this.id}}"  class="edit-mode-{{this.id}}" value="{{this.weight}}" style="display: none" />
-            </td> --}}
+                <td>
+                    <span id="age-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.age}}</span>
+                    <input type='text' id="age-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.age}}"
+                        style="display: none" />
+                </td>
 
-            <td>
-                
-                <a href="/clients/{{this.id}}" class="action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-user-edit" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>View Client Card</b>"></i></a>
+                <td>
+                    <span id="weight-label-{{this.id}}" class="view-mode-{{this.id}}">{{this.weight}}</span>
+                    <input type='text' id="weight-edit-{{this.id}}" class="edit-mode-{{this.id}}" value="{{this.weight}}"
+                        style="display: none" />
+                </td> --}}
 
-                <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Edit Client</b>"></i></a>
-                <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Delete Client</b>"></i></a>
-                
-                <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
-                <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
-                
-                <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>
-                
-                {{!-- <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Workout Packages</b>"></i></a> --}}
+                <td>
 
+                    <a href="/clients/{{this.id}}" class="action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-user-edit"
+                            data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>View Client Card</b>"></i></a>
 
+                    <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"
+                            data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Edit Client</b>"></i></a>
+                    <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"
+                            data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Delete Client</b>"></i></a>
 
-              {{!-- <div class="btn-group" role="group" >
-                
-                <button type="button" class="btn btn-secondary">
-                   <a href="/clients/{{this.id}}" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-user-edit"></i></a> 
-                   <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square"></i></a>
-                </button>
-                
-                <button type="button" class="btn btn-secondary">
-                    <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"></i></a>
-                    <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close"></i></a>
-                </button>
-                
-                <button type="button" class="btn btn-secondary">
-                    <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"></i></a>
-                </button>
+                    <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
+                            class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
+                    <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
+                            class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
 
-                <button type="button" class="btn btn-secondary">
-                    <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>                    
-                </button>
-              </div> --}}
+                    <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i
+                            class="fas fa-file-invoice-dollar"></i></a>
+
+                    {{!-- <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package" id="{{id}}"><i
+                            class="fas fa-file-invoice-dollar" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Workout Packages</b>"></i></a>
+                    --}}
 
 
 
+                    {{!-- <div class="btn-group" role="group">
+
+                        <button type="button" class="btn btn-secondary">
+                            <a href="/clients/{{this.id}}" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i
+                                    class="fas fa-user-edit"></i></a>
+                            <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
+                                    class="far fa-check-square"></i></a>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary">
+                            <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}"
+                                style="display: none"><i class="far fa-window-close"></i></a>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary">
+                            <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"></i></a>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary">
+                            <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package"
+                                id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>
+                        </button>
+                    </div> --}}
 
 
 
-            {{!-- <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button> --}}
-            {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
-            </td>
-        </tr>
 
 
-        {{/each}}
-    </table>
+
+                    {{!-- <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button>
+                    --}}
+                    {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
+                </td>
+            </tr>
+
+
+            {{/each}}
+        </table>
 
 </div>
 
