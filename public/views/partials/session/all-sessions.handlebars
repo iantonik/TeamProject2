@@ -20,8 +20,12 @@
         <th scope="col">Actions</th>
         {{#each session}}
         <tr>
-            <td>{{schedule_date}}</td>
-            <td>{{executed_date}}</td>
+            <td>{{moment this.schedule_date lang="en" format="dddd, MMMM Do YYYY, h:mm a"}}</td>
+            {{#if this.executed_date}}
+            <td>{{moment this.executed_Date lang="en" format="dddd, MMMM Do YYYY, h:mm a"}}</td>
+            {{else}}
+            <td>{{this.executed_Date}}</td>
+            {{/if}}
             <td>{{Client.first_name}}</td>
             <td>{{Client.last_name}}</td>
             {{!-- <td><button class="edit-session" data-id={{id}}>Edit session</button></td> --}}
