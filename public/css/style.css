@@ -66,11 +66,23 @@ a.makearmy:hover {
 }
 .transbg {
     /* background-color: rgba(0, 0, 0, 0.445); */
+    background-color: rgba(32, 32, 32, 0.699);    
+}
+
+.frosty {
+    /* background-color: rgba(0, 0, 0, 0.445); */
     background-color: rgba(0, 0, 0, 0.445);    
 }
 
 .shadowed {
     text-shadow: 2px 2px 4px #000000;
+}
+
+.fc-list-heading-main {
+    color: black !important;
+}
+.fc-list-heading-alt {
+    color: black !important;
 }
 
 .table{
