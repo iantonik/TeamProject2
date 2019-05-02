@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#new-Client").click(function () {
         var newClient = {
             "first_name": $("#firstName").val().trim(),
-            "last_namet": $("#lastName").val().trim(),
+            "last_name": $("#lastName").val().trim(),
             "email": $("#Client-email").val().trim(),
             "address": $("#client-address").val().trim(),
             "phone_number": $("#phoneNumber").val().trim(),
