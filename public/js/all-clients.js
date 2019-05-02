@@ -15,8 +15,7 @@ $(document).ready(function () {
         $.post("/api/clients/new", newClient);
         location.reload();
     });
-
-
+    
     $(function () {
         console.log("Client View displayed");
         $(".client").on("click", function() {
@@ -86,6 +85,14 @@ $(document).ready(function () {
             weight: weight
         }
         updateClient(id, clientUpdate);
+
     })
+
+    var addClient = function(id){
+        $.ajax({
+            method: "GET",
+            url: `/api/client/${id}`
+        }).then(location.reload())
+    }
 
 });
