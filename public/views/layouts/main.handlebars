@@ -48,11 +48,11 @@
                     <a class="nav-link text-warning makearmy" href="/clients/all">Clients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning makearmy" href="/sessions/all">Sessions</a>
-                </li>            
-                <li class="nav-item">
                     <a class="nav-link text-warning makearmy" href="/packages/all">Packages</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning makearmy" href="/sessions/all">Sessions</a>
+                </li>            
                 <li class="nav-item">
                     <a id="infomodal"class="nav-link text-warning makearmy" href="#">About FlexTrainer</a>
                 </li>            
@@ -73,13 +73,14 @@
 
     {{!-- Info/Demo Modal --}}
 
-<div class="modal fade bg4" id="displayModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+<div class="modal fade splashbg" id="displayModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-lg bg-none" role="document">
         <div class="modal-content rounded" style="background-color: rgba(58, 58, 58, 0.445)">            
             <div class="modal-header">
               <h1 class="modal-title logofont ml-5 text-primary shadowed ">Flex<span class="text-warning">Trainer</span></h1><br>
               <h6 class="text-light markfont shadowed">Work Less, Workout More</h6>
             </div>   
+
             <div class="modal-body text-center">
                 <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
                     <ol class="carousel-indicators">
@@ -89,38 +90,51 @@
                       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> 
                     </ol>
-                    <div class="carousel-inner">
+                    
+                    
+                    <div class="carousel-inner text-center">
 
 
-                      <div id="info1" class="carousel-item active text-white text-center">
-                          <div class="" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="float-center text-white armyfont">Manage your work flow in a quick and effective way with FlexTrainer.</h3>
-                          </div>
+
+
+                      <div id="info1" class="carousel-item text-white logoleft active">
+                            <div>
+                                <img src="/static/images/gym3.jpg" width="400px" height="250px">
+                            </div>
+                            <div>
+                                <h3 class="float-center text-white armyfont">Manage your work flow in a quick and effective way with FlexTrainer.</h3>
+                            </div>
+                            <br><br>
                       </div>
 
-                      <div id="info2" class="carousel-item text-white">
-                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">Quickly access your clients data and adjust their individual workout routines, scheduling, and more.</h3>
-                          </div>
+                      <div id="info2" class="carousel-item text-white logoleft">
+                            <div>
+                                <img src="/static/images/gym4.jpg" width="400px" height="250px">
+                            </div>
+                            <div>
+                                <h3 class="float-center text-white armyfont">Quickly access your clients data and adjust their individual workout routines, scheduling, and more.</h3>
+                            </div>
+                            <br><br>
                       </div>
 
-                      <div id="info3" class="carousel-item text-white">
-                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">Create workout packages and customize sessions, packages and pricing in one go.</h3>
-                          </div>
+                      <div id="info3" class="carousel-item text-white logoleft">
+                            <div>
+                                <img src="/static/images/gym5.jpg" width="400px" height="250px">
+                            </div>
+                            <div>
+                                <h3 class="float-center text-white armyfont">Create workout packages and customize sessions, packages and pricing in one go.</h3>
+                            </div>
+                            <br><br>
                       </div>
 
-                      <div id="info4" class="carousel-item text-white">
-                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">Designed and built from the ground up to be mobile first. Access FlexTrainer's powerful tools on the go.</h3>
-                          </div>
-                      </div>
-
-
-                      <div id="info5" class="carousel-item text-white">
-                          <div class="float-center" style="background-color: rgba(0, 0, 0, 0); width: 70%; min-height: 250px">
-                            <h3 class="text-white armyfont">FlexTrainer gives you the tools to allow you to work less, so you can workout more.</h3>
-                          </div>
+                      <div id="info4" class="carousel-item text-white logoleft">
+                            <div>
+                                <img src="/static/images/gym6.jpg" width="400px" height="250px">
+                            </div>
+                            <div>
+                                <h3 class="float-center text-white armyfont">FlexTrainer gives you the tools to allow you to work less, so you can workout more.</h3>
+                            </div>
+                            <br><br>
                       </div>
 
 
@@ -138,7 +152,7 @@
             </div>
             
             <div class="modal-footer item-center">
-                <a href="/" class="btn btn-lg btn-outline-dark btn-block text-light logoright"><h3>Back to <span class="logofont text-primary">Flex</span><span class="text-warning">Trainer</span></h3></a>
+                <a href="/" class="btn btn-lg btn-outline-dark btn-block text-light logoright"><h3>Enter <span class="logofont text-primary">Flex</span><span class="text-warning">Trainer</span></h3></a>
             </div>
         </div>
     </div>
