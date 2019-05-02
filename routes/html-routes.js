@@ -2,7 +2,7 @@ var moment = require('moment');
 var db = require("../models");
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
+var path = require("path");
 
 
 module.exports = function (app) {
@@ -27,6 +27,11 @@ module.exports = function (app) {
             res.render("index", {schedule: retVal});
         });
     });
+
+    app.get("/clients/new"), function(req, res){
+        console.log("it is working")
+      res.render("add-new-clients", {})
+    }
 
     app.get("/clients/all", function(req, res) {
         db.Client.findAll({}).then(function(data) {
@@ -69,5 +74,7 @@ module.exports = function (app) {
             res.render("edit-view", {session: response});
         });
     });
-
+    app.get("/forms", function(req,res){
+        res.sendFile(path.join(__dirname, "formclient.html"));
+    })
 };

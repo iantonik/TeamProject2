@@ -3,9 +3,12 @@
     /* max-height: 500px; */
     margin: 0 auto;
 }
+
+.splashbg {
+    background-image: url("/static/images/splashbg.jpg")
+}
 .bg1 {
     background-image: url("/static/images/gym1.jpg");
-    
 }
 .bg2 {
     background-image: url("/static/images/gym2.jpg");

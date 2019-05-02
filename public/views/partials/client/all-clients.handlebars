@@ -2,16 +2,20 @@
     <div class="col-md-12">
         <h2 class="text-light armyfont ml-3 shadowed float-left">Clients View:</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="/api/clients/new"><button class="float-right btn btn-outline-dark"><i class="fas fa-user-plus"></i> Add New Client</button></a>
 =======
         <a href="#"><button class="float-right btn btn-outline-dark text-light"><i class="fas fa-user-plus"></i> Add New Client</button></a>
 >>>>>>> 6dacea7c75205f92b933de5e266ea967317329a2
+=======
+        <button class="float-right btn btn-outline-dark" data-toggle="modal" data-target="#clientModal"><i class="fas fa-user-plus"></i> Add New Client</button>
+>>>>>>> da424d056715b032d943a9698f1cffc591bcbda9
     </div>
 </div>
 <div>
     
     <script src="/static/js/all-clients.js"></script>
-    <script src="/static/js/buy-package.js"></script>
+    {{!-- <script src="/static/js/buy-package.js"></script> --}}
     {{!-- <table class="table table-striped text-light markfont"> --}}
         <table class="table">
             <th scope="col">First Name  </th>
@@ -122,43 +126,63 @@
 
 
 
-{{!-- Purchase package model --}}
 
-<div class="modal fade" id="purchase-package" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel"
-    aria-hidden="true">
+<button type="button" class="btn" data-toggle="modal" data-target="#clientModal">
+    + Add New Client
+</button>
+
+<div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="clientModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="packageModalLabel">Purchased Package</h5>
+                <h5 class="modal-title" id="clientModalLabel">Add New Client</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="buy-package-form">
+                <form>
                     <div class="form-group">
-                        <input type="hidden" id="purchasing-clientID" name="clientID" value="">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First name">
                     </div>
                     <div class="form-group">
-
-                        <label for="selPkg">Select package:</label>
-                        <select class="form-control" id="selPkg">
-                            {{!-- Options dropdown populated by buy-package.js --}}
-                        </select>
-
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last name">
                     </div>
-                {{!-- <button type="submit" id="pur-button" class="btn btn-primary">Submit</button> --}}
-
+                    <div class="form-group">
+                        <label for="Client-email"><i class="fa fa-envelope"></i>Email</label>
+                        <input type="email" class="form-control" id="Client-email" placeholder="Email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-address"><i class="fa fa-address-card-o"></i>Address</label>
+                        <input type="text" class="form-control" id="client-address" placeholder="Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber"><i class="fa fa-address-card-o"></i>Phone number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"
+                            placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-gender">Gender</label>
+                        <input type="" class="form-control" id="client-gender" placeholder="Gender">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-age">Age</label>
+                        <input type="number" min="1" class="form-control" id="client-age" placeholder="Age">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-weight">Weight</label>
+                        <input type="number" class="form-control" id="client-weight" placeholder="Weight">
+                    </div>
                 </form>
-
 
 
             </div>
             <div class="modal-footer">
+                <button type="button" id="new-Client" class="btn btn-primary">Add Client</button>
 
-                <a href="#" id="btn-purchase-package" class="btn btn-success success">Purchase Package</a>
-
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
 
         </div>
