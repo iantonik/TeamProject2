@@ -30,9 +30,14 @@
             {{!-- omar: above- old // below- new button code --}}
 
             <td>
+                {{#unless this.executed_Date}}
                 <a href="#" class="edit-session" data-id={{id}}><i class="fas fa-user-clock" data-toggle="tooltip"
-                        data-html="true" title="<b class='armyfont text-warning shadowed'>Edit Session</b>"></i></a>
+                    data-html="true" title="<b class='armyfont text-warning shadowed'>Edit Session</b>"></i></a>
+                <a href="#" class="mark-session-done" data-id={{id}}><i class="fas fa-check" data-toggle="tooltip"
+                        data-html="true" title="<b class='armyfont text-warning shadowed'>Session Used</b>"></i></a>
+                {{/unless}}
             </td>
+
 
         </tr>
         {{/each}}
