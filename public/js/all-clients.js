@@ -35,8 +35,10 @@ $(document).ready(function () {
     var deleteClient = function(id){
         $.ajax({
             method: "DELETE",
-            url: `/api/client/${id}`
-        }).then(location.reload())
+            url: `/api/clients/${id}`
+        }).then(() => {
+            location.reload();
+        });
     }
 
     function updateClient(id, updates) {

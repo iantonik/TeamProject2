@@ -21,14 +21,18 @@ module.exports = function (sequelize, DataTypes) {
     Purchase.associate = function (models) {
         Purchase.belongsTo(models.Client,{
             foreignKey:{
-                allowNull: false
-            }
+                allowNull: false,
+            },
+            onDelete: 'CASCADE',
+            hooks: true
         })
 
         Purchase.hasMany(models.Session, {
             foreignKey:{
                 allowNull: false
-            }
+            },
+            onDelete: 'CASCADE',
+            hooks: true
         })
     };
 
