@@ -31,6 +31,7 @@ app.delete("/api/sessions/:id", function(req, res) {
     }).then(function(data) {
         res.json(data);
     });
-})
+});
+
 
 };
