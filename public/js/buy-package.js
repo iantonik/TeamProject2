@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     $(".buy-package").click(async (e) => {
+        if ($('#selPkg > option').length) return [];
         var data = await getPackageList();
         var $dropdown = $('#selPkg');
         $.each(data, function () {

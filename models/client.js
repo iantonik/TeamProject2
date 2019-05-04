@@ -32,7 +32,16 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey:{
                 allowNull: false
             },
-            onDelete: 'CASCADE'
+            onDelete: 'CASCADE',
+            hooks: true
+        });
+
+        Client.hasMany(models.Purchase, {
+            foreignKey:{
+                allowNull: false
+            },
+            onDelete: 'CASCADE',
+            hooks: true
         });
 
     }
