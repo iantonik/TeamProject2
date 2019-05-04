@@ -1,7 +1,7 @@
 <div class="row mt-3">
     <div class="col-md-12">
         <h2 class="text-light armyfont ml-3 shadowed float-left">Clients</h2>
-        <button class="float-right btn btn-outline-dark" data-toggle="modal" data-target="#clientModal"><i class="fas fa-user-plus"></i>
+        <button class="float-right btn btn-outline-dark text-light" data-toggle="modal" data-target="#clientModal"><i class="fas fa-user-plus"></i>
             Add New Client</button>
     </div>
 </div>
@@ -86,49 +86,11 @@
                     {{!-- <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"
                             data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Delete Client</b>"></i></a> --}}
 
-                    <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
-                            class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
-                    <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
-                            class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
+                    <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
+                    <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
                
                 <a href="#" class="buy-package action fas fa-file-invoice-dollar view-mode-{{this.id}}" data-toggle="modal" data-target="#purchase-package" name="{{id}}"></a>
 
-
-
-
-                    {{!-- <div class="btn-group" role="group">
-
-                        <button type="button" class="btn btn-secondary">
-                            <a href="/clients/{{this.id}}" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i
-                                    class="fas fa-user-edit"></i></a>
-                            <a href="#" class="save-client action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i
-                                    class="far fa-check-square"></i></a>
-                        </button>
-
-                        <button type="button" class="btn btn-secondary">
-                            <a href="#" class="edit-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"></i></a>
-                            <a href="#" class="cancel-edit-client action edit-mode-{{this.id}}" name="{{this.id}}"
-                                style="display: none"><i class="far fa-window-close"></i></a>
-                        </button>
-
-                        <button type="button" class="btn btn-secondary">
-                            <a href="#" class="delete-client action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"></i></a>
-                        </button>
-
-                        <button type="button" class="btn btn-secondary">
-                            <a href="#" class="buy-package action" data-toggle="modal" data-target="#purchase-package"
-                                id="{{id}}"><i class="fas fa-file-invoice-dollar"></i></a>
-                        </button>
-                    </div> --}}
-
-
-
-
-
-
-                    {{!-- <button class="btn btn-sm btn-outline-light client armyfont" data-id={{id}}>View Client</button>
-                    --}}
-                    {{!-- <button class="btn buy-package" id="{{id}}">Add Package</button> --}}
                 </td>
             </tr>
 
@@ -138,15 +100,13 @@
 
 </div>
 
-
-
 {{!-- Add New Client Modal --}}
 
 <div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="clientModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-                <h5 class="modal-title" id="clientModalLabel">Add New Client</h5>
+                <h3 class="modal-title armyfont" id="clientModalLabel"><i class="fas fa-user-plus"></i>  Add New Client</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -191,7 +151,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" id="new-Client" class="btn btn-primary">Add Client</button>
+                <button type="button" id="new-Client" class="btn btn-warning">Add Client</button>
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -205,9 +165,9 @@
 <div class="modal fade" id="purchase-package" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-                <h5 class="modal-title" id="packageModalLabel">Purchased Package</h5>
+                <h5 class="modal-title" id="packageModalLabel armyfont">Purchased Package</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -234,7 +194,7 @@
             </div>
             <div class="modal-footer">
 
-                <a href="#" id="btn-purchase-package" class="btn btn-success success">Purchase Package</a>
+                <a href="#" id="btn-purchase-package" class="btn btn-warning success">Purchase Package</a>
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>

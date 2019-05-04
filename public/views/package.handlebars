@@ -36,12 +36,12 @@
             </td>
 
             <td>
-                <a href="#" class="edit-pkg action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit"></i></a>
+                <a href="#" class="edit-pkg action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-edit" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Edit Client</b>"></i></a>
                 {{> package/package-block}}
                 <a href="#" class="delete-pkg action view-mode-{{this.id}}" name="{{this.id}}"><i class="fas fa-trash-alt"></i></a>
                 
-                <a href="#" class="save-pkg action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square"></i></a>
-                <a href="#" class="cancel-edit-pkg action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close"></i></a>
+                <a href="#" class="save-pkg action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-check-square" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Save Changes</b>"></i></a>
+                <a href="#" class="cancel-edit-pkg action edit-mode-{{this.id}}" name="{{this.id}}" style="display: none"><i class="far fa-window-close" class="far fa-window-close" data-toggle="tooltip" data-html="true" title="<b class='armyfont text-warning shadowed'>Cancel Changes</b>"></i></a>
 
             </td>
         </tr>
@@ -53,9 +53,9 @@
 <div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-                <h5 class="modal-title" id="packageModalLabel">Add New Package</h5>
+                <h3 class="modal-title armyfont" id="packageModalLabel"><i class="fas fa-dumbbell"></i> Add New Package</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -82,7 +82,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" id="new-package" class="btn btn-primary">Add Package</button>
+                <button type="button" id="new-package" class="btn btn-warning">Add Package</button>
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
