@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     $(".add-session").click(async (e) => {
+        if ($('#skdClient > option').length) return;
         var dataClient = await getClientList();
         var $dropdownClient = $('#skdClient');
         $.each(dataClient, function () {
@@ -19,6 +20,7 @@ $(document).ready(function () {
     });
 
     var populateAvailPkg = async (clientID) => {
+        if ($('#avail-pkg > option').length) return;
         var dataAvailPkg = await getAvailPkg(clientID);
         var $dropdownAvailPkg = $('#avail-pkg');
         $.each(dataAvailPkg, function () {
