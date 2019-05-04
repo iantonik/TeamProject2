@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     var populateAvailPkg = async (clientID) => {
-        if ($('#avail-pkg > option').length) return;
+        $('#avail-pkg').empty();
         var dataAvailPkg = await getAvailPkg(clientID);
         var $dropdownAvailPkg = $('#avail-pkg');
         $.each(dataAvailPkg, function () {
