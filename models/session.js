@@ -13,13 +13,15 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey:{
                 allowNull: false
             },
-            onDelete: 'CASCADE'
+            onDelete: 'CASCADE',
+            hooks: true
         })
         Session.belongsTo(models.Client,{
             foreignKey:{
                 allowNull: false
             },
-            onDelete: 'CASCADE' 
+            onDelete: 'CASCADE',
+            hooks: true
         })
     }
 

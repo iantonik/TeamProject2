@@ -1,14 +1,36 @@
-<div class="row mt-3">
-    <h2 class="text-light armyfont ml-3">Clients with low session count:</h2>
-    <div id="client-list" class="text-light markfont shadowed">
-    </div>
-</div>
+
 
 <div class="row mt-3">
     <h2 class="text-light armyfont ml-3">Upcoming Sessions:</h2>
 </div>
 <div class="row mt-0">
     <div id="calendar" class="frosty text-light"></div>
+</div>
+
+
+<div class="row mt-5">
+    <h2 class="text-light armyfont ml-3">Session Usage Summary:</h2>
+    <div id="client-list" class="text-light markfont shadowed">
+    </div>
+</div>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th scope="col">Client</th>
+            <th scope="col">Package</th>
+            <th scope="col">Sessions Purchased</th>
+            <th scope="col">Sessions Used</th>
+        </tr>
+        {{#each sessionUsage}}
+        <tr>
+             <td><span>{{ClientName}}</span></td>
+            <td><span>{{WorkoutType}}</span></td>
+             <td><span>{{SessionCount}}</span></td>
+            <td><span>{{UsedSessionCount}}</span></td>
+        </tr>
+        {{/each}}
+    </table>
+
 </div>
 
 <script>
