@@ -1,4 +1,5 @@
 $(function () {
+
     $(".edit-session").on("click", function() {
         // create & track all buttons
         var editButton = $(this);
@@ -24,7 +25,7 @@ $(function () {
         });
 
 
-        // manage butt/input display. Put new scheduled time and reload page
+        // manage button/input display. Put new scheduled time and reload page
         $(saveButton).on("click", function() {
             $(editButton).show();
             $(saveButton).hide();
@@ -40,6 +41,24 @@ $(function () {
             }).then(function(data) {
                 location.reload();
             });
-        })
+        });
+    });
+
+    $(".mark-session-done").on("click", function() {
+        var sessionID = $(this).data("id");
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+        $.ajax({
+            type: "PUT",
+            url: `/api/sessions`,
+            data: {
+                id: sessionID,
+                executed_Date: dateTime
+            }
+        }).then(function(data) {
+            location.reload();
+        });;
     });
 });
