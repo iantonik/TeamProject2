@@ -8,7 +8,6 @@ const path = require('path')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static("public"));
 app.use('/static', express.static('public'))
 app.use('/node_modules', express.static(path.join(__dirname,'node_modules')));
 
