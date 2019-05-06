@@ -40,21 +40,6 @@ module.exports = function (app) {
   });
 
 
-  //omar: not used?
-  app.put("/api/clients/edit/:id", function (req, res) {
-    console.log("editing a client");
-    db.Client.update(
-      req.body,
-      {
-        where: {
-          id: req.params.id
-        }
-      }
-    ).then(function (dbClients) {
-      res.json(dbClients);
-    });
-  });
-
   app.delete("/api/clients/:id", function (req, res) {
     db.Client.destroy({
       where: {
@@ -64,78 +49,6 @@ module.exports = function (app) {
       res.json(dbClient);
     });
   });
-
-
-  app.get("/api/count", function (req, res) {
-    db.Client.findAll({
-      attributes: ['id', 'first_name', 'last_name'],
-      include: [{
-        model: db.Session,
-        attributes: ['PurchaseId', [Sequelize.fn('COUNT', 'if(Sessions.executed_Date is null, null, 1)'), 'UsedSessionCount']],
-      }],
-      group: ['id','PurchaseId'],
-      raw: true
-
-    }).then(function (data) {
-      res.json(data)
-    });
-  });
-
-app.get("/api/count2", function(req, res){
-  db.Client.findAll({
-    attributes: ['id', 'first_name', 'last_name'],
-    
-    include: [{
-      model: db.Purchase,
-      attributes: ['id','workout_type', 'session_count'],
-      
-      include: [{
-        model: db.Session,
-        attributes: ['PurchaseId', [Sequelize.fn('COUNT', 'if(Sessions.executed_Date is null, null, 1)'), 'UsedSessionCount']]
-        
-      }]
-    }],
-    group: ['Client.id', Sequelize.col('Purchase.id'), Sequelize.col('Session.PurchaseId')],
-  }).then(function(data){
-    res.json(data)
-  })
-})
-
-  
-
-  app.get("/api/ab", function(req, res){
-    db.Session.findAll({
-
-      attributes: ['Session.PurchaseId',  [Sequelize.fn('COUNT', Sequelize.col('Session.executed_date')), 'UsedSessionCount']],
-
-      include: [
-        {model: db.Purchase, attributes: ['Id', 'ClientId', 'session_count', 'workout_type']}, 
-        {model: db.Client, attributes: ['first_name', 'last_name']}
-      ],
-
-      group: ['Session.PurchaseId', 'Client.Id']
-
-    }).then(function (data) {
-      res.json(data)
-    });
-    
-  })
-
-  app.get("/api/a", function(req, res){
-    db.Session.findAll({
-
-      attributes: ['Session.PurchaseId',  [Sequelize.fn('COUNT', Sequelize.col('Session.executed_date')), 'UsedSessionCount']],
-
-      include: [{model: db.Purchase, attributes: ['Id', 'ClientId', 'session_count']}
-      ],
-
-      group: ['Session.PurchaseId']
-
-    }).then(function (data) {
-      res.json(data)
-    });
-    
-  })
 
 };
 
